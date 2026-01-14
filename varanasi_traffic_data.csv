@@ -222,3 +222,8 @@ timestamp,route_name,duration,status
 2026-01-14 22:53:54,Maidagin -> Kaal Bhairav,4 min,4 m,🔴 Heavy
 2026-01-14 22:54:00,Godowlia -> Sankat Mochan,18 min,18 m,🔴 Heavy
 2026-01-14 22:54:06,Godowlia -> Dashashwamedh,7 min,7 m,🔴 Heavy
+2026-01-14 23:21:02,Maidagin -> Vishwanath,11,4,🔴 Heavy
+2026-01-14 23:21:06,Godowlia -> Maidagin,10,5,🔴 Heavy
+2026-01-14 23:21:10,Maidagin -> Kaal Bhairav,3,0,🟢 Clear
+2026-01-14 23:21:14,Godowlia -> Sankat Mochan,17,5,🔴 Heavy
+2026-01-14 23:21:18,Godowlia -> Dashashwamedh,6,1,🟡 Moderate
