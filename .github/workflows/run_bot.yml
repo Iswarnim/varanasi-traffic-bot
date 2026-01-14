@@ -2,11 +2,24 @@ name: Run Traffic Bot
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # This runs every 30 minutes
-  workflow_dispatch:        # This allows you to click a button to run it manually
+    # --- CRITICAL TIMING CONFIGURATION (UTC) ---
+    
+    # 1. MORNING RUSH: Run every 5 mins from 00:00 to 04:55 UTC 
+    # (This covers 5:30 AM to 10:25 AM IST)
+    - cron: '*/5 0-4 * * *'
+
+    # 2. EVENING RUSH: Run every 5 mins from 10:00 to 12:55 UTC
+    # (This covers 3:30 PM to 6:25 PM IST)
+    - cron: '*/5 10-12 * * *'
+
+    # 3. REST OF THE DAY: Run every 30 mins
+    # We exclude the busy hours above to avoid double running
+    - cron: '*/30 5-9,13-23 * * *'
+
+  workflow_dispatch: # Allows manual click button
 
 permissions:
-  contents: write           # Gives permission to save the CSV back to the repo
+  contents: write
 
 jobs:
   scrape-traffic:
