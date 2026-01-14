@@ -8,8 +8,10 @@ import re
 from datetime import datetime, timedelta
 
 # ================= CONFIGURATION =================
-FILE_NAME = "varanasi_traffic_data.csv"
+# 1. NEW FILE NAME (Keeps your old data safe in the old file)
+FILE_NAME = "varanasi_smart_data.csv"
 
+# 2. UPDATED ROUTE LIST
 ROUTES = [
     # --- ORIGINAL ROUTES ---
     {
@@ -43,24 +45,24 @@ ROUTES = [
         "baseline": 5
     },
 
-    # --- NEW ADDED ROUTES ---
+    # --- NEW ROUTES (PHASE 2) ---
     {
         "name": "Cantt -> Godowlia", 
-        "origin": "Varanasi Junction railway station", # Cantt Station
+        "origin": "Varanasi Junction railway station", 
         "dest": "Godowlia Crossing, Varanasi",
-        "baseline": 15 # Estimated Min: 15 min (Long route)
+        "baseline": 15 # Estimated Min
     },
     {
         "name": "Lanka -> Assi Ghat", 
         "origin": "Lanka Gate, BHU, Varanasi", 
         "dest": "Assi Ghat, Varanasi",
-        "baseline": 6 # Estimated Min: 6 min
+        "baseline": 6 # Estimated Min
     },
     {
         "name": "Rathyatra -> Godowlia", 
         "origin": "Rathyatra Crossing, Varanasi", 
         "dest": "Godowlia Crossing, Varanasi",
-        "baseline": 8 # Estimated Min: 8 min
+        "baseline": 8 # Estimated Min
     }
 ]
 
@@ -70,7 +72,7 @@ def get_ist_time():
     return ist_now.strftime("%Y-%m-%d %H:%M:%S")
 
 def run_bot():
-    print("--- ☁️ Starting Smart Cloud Robot ---")
+    print(f"--- ☁️ Starting Smart Robot (Saving to {FILE_NAME}) ---")
     
     options = Options()
     options.add_argument("--headless=new")
@@ -88,10 +90,11 @@ def run_bot():
             origin = route['origin'].replace(" ", "+")
             dest = route['dest'].replace(" ", "+")
             
+            # Using CAR mode (!3e0) for consistency
             url = f"https://www.google.com/maps/dir/{origin}/{dest}/data=!4m2!4m1!3e0"
             
             driver.get(url)
-            time.sleep(2) # Speed up slightly since we have more routes now
+            time.sleep(2) 
             
             current_min = 0
             
