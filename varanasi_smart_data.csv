@@ -30847,3 +30847,11 @@ timestamp,route_name,total_time_min,delay_min,status_calculated
 2026-08-10 02:06:54,Cantt -> Godowlia,22,7,🔴 Heavy
 2026-08-10 02:06:56,Lanka -> Assi Ghat,6,0,🟢 Clear
 2026-08-10 02:06:59,Rathyatra -> Godowlia,17,9,🔴 Heavy
+2026-08-10 03:06:08,Maidagin -> Vishwanath,5,0,🟢 Clear
+2026-08-10 03:06:11,Godowlia -> Maidagin,7,2,🔴 Heavy
+2026-08-10 03:06:13,Maidagin -> Kaal Bhairav,4,1,🟡 Moderate
+2026-08-10 03:06:15,Godowlia -> Sankat Mochan,17,5,🔴 Heavy
+2026-08-10 03:06:17,Godowlia -> Dashashwamedh,6,1,🟡 Moderate
+2026-08-10 03:06:20,Cantt -> Godowlia,21,6,🔴 Heavy
+2026-08-10 03:06:22,Lanka -> Assi Ghat,6,0,🟢 Clear
+2026-08-10 03:06:24,Rathyatra -> Godowlia,16,8,🔴 Heavy
